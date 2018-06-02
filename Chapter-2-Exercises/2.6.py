@@ -16,7 +16,23 @@ def  binaryToDecimal(n):
 		n = n//10
 		decValue += lastDigit*base
 		base = base*2
+		
 	return decValue
 
 num = input('enter a binary number to convert to decimal: ')
 print(binaryToDecimal(num))
+
+
+
+def decimalToBinary(n):
+	binVal = []
+
+	while(n >= 1):
+		binVal += [n%2]
+		n = n//2
+
+	return binVal[::-1]
+
+num2 = input('enter a decimal number to convert to binary: ')
+# '*' star character unpacks whats inside of list
+print(*decimalToBinary(num2))
